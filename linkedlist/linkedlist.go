@@ -27,7 +27,7 @@ func (list *List) Append(node *Node) {
 	list.Tail = node
 }
 
-// InsertAtTheBeginning adds a new node at the beginning of a linked list
+// InsertFirst adds a new node at the beginning of a linked list
 // Complexity: O(1)
 func (list *List) InsertFirst(node *Node) {
 	if list.Head == nil {
@@ -113,10 +113,5 @@ func (list *List) Reverse() {
 		currentNode = nextNode
 	}
 
-	swap(list.Head, list.Tail)
-}
-
-// Complexity: O(1)
-func swap(a, b *Node) {
-	a, b = b, a
+	list.Head, list.Tail = list.Tail, list.Head
 }
